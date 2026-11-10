@@ -1,0 +1,23 @@
+odysseus/security.py
+  s_bebefa819993be::t_fabd354af45d45 1-43,45-50,52-64
+  s_bebefa819993be::t_6b422b65243ae0 44,51
+odysseus/tools.py
+  s_bebefa819993be::t_be30264bbbe0ba 1-13,16-43,45-53,55-143,145-151,153-174
+  s_bebefa819993be::t_6b422b65243ae0 14-15,44,54,144,152
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "724f0d039c2278df7384c23d1ab7758203e4f89b",
+  "prompts": {},
+  "sessions": {
+    "s_bebefa819993be": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0e5cc9bb-beb6-4a9c-993d-a5c01386d480",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "shamim khaled <shamim@shamims-Laptop.local>"
+    }
+  }
+}
