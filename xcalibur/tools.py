@@ -23,7 +23,7 @@ import subprocess
 from dataclasses import dataclass
 from typing import Callable
 
-IGNORED_DIRS = {".git", "node_modules", "__pycache__", ".venv"}
+IGNORED_DIRS = {".git", "node_modules", "__pycache__", ".venv", ".xcalibur"}
 MAX_READ_LINES = 4000
 MAX_BASH_CHARS = 12000
 MAX_LIST_ENTRIES = 500

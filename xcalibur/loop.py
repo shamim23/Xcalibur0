@@ -1,7 +1,7 @@
 """Day 1 — the agent loop: call, run tools, feed results back, repeat.
 
 Concept taught: an agent is a while-loop around one model call. Everything
-else in Odysseus is a policy hung off this loop's seams.
+else in Xcalibur is a policy hung off this loop's seams.
 
 Design rules this file embodies:
   * Vendor-agnostic. It speaks only the neutral message format and asks the

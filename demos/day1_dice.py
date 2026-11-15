@@ -17,7 +17,7 @@ Run from the repo root:  python3 -m demos.day1_dice
 import random
 import sys
 
-from odysseus import loop, provider
+from xcalibur import loop, provider
 
 TASK = "Roll 3 dice and tell me whether the total beats 10"
 

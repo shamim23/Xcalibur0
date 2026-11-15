@@ -16,9 +16,9 @@ Run from the repo root:  python3 -m demos.day2_build [task...]
 import sys
 import tempfile
 
-from odysseus import loop, provider
-from odysseus.security import Policy
-from odysseus.tools import core_tools
+from xcalibur import loop, provider
+from xcalibur.security import Policy
+from xcalibur.tools import core_tools
 
 TASK = ("Create fib.py with an iterative fib(n), a __main__ printing fib(30), "
         "run it and confirm the output is 832040")
@@ -47,7 +47,7 @@ def on_event(kind, payload):
 def main(task=None, workdir=None):
     """Run ``task`` in ``workdir`` (a new scratch directory by default)."""
     task = task or " ".join(sys.argv[1:]) or TASK
-    workdir = workdir or tempfile.mkdtemp(prefix="odysseus-day2-")
+    workdir = workdir or tempfile.mkdtemp(prefix="xcalibur-day2-")
     policy = Policy("yolo")
     tools = {t.name: t for t in core_tools(workdir)}
     print("workdir: %s" % workdir)

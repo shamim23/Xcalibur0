@@ -5,3 +5,7 @@ __pycache__/
 # API key material — never commit
 xcalibur_key.sh
 session.md
+
+# Local notes and agent session logs
+session.md
+.xcalibur/

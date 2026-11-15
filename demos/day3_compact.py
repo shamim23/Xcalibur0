@@ -15,9 +15,9 @@ Run from the repo root:  python3 -m demos.day3_compact [task...]
 import sys
 import tempfile
 
-from odysseus import context, loop, provider
-from odysseus.security import Policy
-from odysseus.tools import core_tools
+from xcalibur import context, loop, provider
+from xcalibur.security import Policy
+from xcalibur.tools import core_tools
 from demos.day2_build import SYSTEM, on_event
 
 BUDGET_TOKENS = 1500
@@ -29,7 +29,7 @@ TASK = ("Create five files one.txt through five.txt, each with 20 lines of the "
 def main(task=None, workdir=None, budget_tokens=BUDGET_TOKENS):
     """Run ``task`` with compaction on ``before_turn``; return (answer, fired)."""
     task = task or " ".join(sys.argv[1:]) or TASK
-    workdir = workdir or tempfile.mkdtemp(prefix="odysseus-day3-")
+    workdir = workdir or tempfile.mkdtemp(prefix="xcalibur-day3-")
     model = provider.DEFAULT_MODEL
     fired = []
 

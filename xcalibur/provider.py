@@ -1,6 +1,6 @@
 """Day 1 — the provider seam: one vendor's API hidden behind a neutral contract.
 
-Concept taught: every Odysseus provider exposes the same ``complete(...)`` over
+Concept taught: every Xcalibur provider exposes the same ``complete(...)`` over
 the same neutral message format, so ``loop.py`` never learns a vendor's wire
 shape. Swapping providers is swapping this file.
 
