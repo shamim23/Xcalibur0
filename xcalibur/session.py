@@ -70,6 +70,40 @@ def latest(workdir):
     return max(paths, key=lambda p: (os.path.getmtime(p), p)) if paths else None
 
 
+def list_sessions(workdir):
+    """Return [{id, path, mtime, messages, title}] for every session, newest first."""
+    directory = os.path.join(workdir, SESSION_DIR)
+    if not os.path.isdir(directory):
+        return []
+    found = []
+    for name in os.listdir(directory):
+        if not name.endswith(".jsonl"):
+            continue
+        path = os.path.join(directory, name)
+        count, title = 0, ""
+        with open(path, encoding="utf-8", errors="replace") as handle:
+            for line in handle:
+                try:
+                    message = json.loads(line)
+                except json.JSONDecodeError:
+                    break
+                count += 1
+                if not title and message.get("role") == "user":
+                    title = " ".join(str(message.get("text") or "").split())
+        found.append({"id": name[:-len(".jsonl")], "path": path,
+                      "mtime": os.path.getmtime(path), "messages": count,
+                      "title": title})
+    return sorted(found, key=lambda s: (s["mtime"], s["path"]), reverse=True)
+
+
+def find(workdir, prefix):
+    """Return the path of the newest session whose id starts with ``prefix``."""
+    for item in list_sessions(workdir):
+        if item["id"].startswith(str(prefix)):
+            return item["path"]
+    return None
+
+
 def _repair(messages):
     """Answer any tool calls of the last assistant message that never ran."""
     last = next((i for i in range(len(messages) - 1, -1, -1)

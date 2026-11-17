@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xcalibur"
+dynamic = ["version"]
+description = "A minimal, zero-dependency coding-agent harness."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+xcalibur = "xcalibur.cli:main"
+
+[tool.setuptools]
+packages = ["xcalibur"]
+
+[tool.setuptools.dynamic]
+version = {attr = "xcalibur.__version__"}

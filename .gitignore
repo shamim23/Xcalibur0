@@ -9,3 +9,7 @@ session.md
 # Local notes and agent session logs
 session.md
 .xcalibur/
+
+# Packaging
+*.egg-info/
+build/
